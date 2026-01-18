@@ -1,0 +1,50 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8FBC8F"/>
+      <stop offset="50%" stop-color="#90C695"/>
+      <stop offset="100%" stop-color="#7CB342"/>
+    </linearGradient>
+    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ECDC4"/>
+      <stop offset="50%" stop-color="#26A69A"/>
+      <stop offset="100%" stop-color="#00796B"/>
+    </linearGradient>
+    <radialGradient id="centerGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#E8F5E8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#C8E6C9" stop-opacity="0.3"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Outer circle background -->
+  <circle cx="60" cy="60" r="55" fill="#F8F9FA" stroke="#E0E0E0" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Back petals (darker green) -->
+  <path d="M60 25 C50 25, 40 35, 40 50 C40 55, 45 60, 60 60 C75 60, 80 55, 80 50 C80 35, 70 25, 60 25 Z" fill="url(#greenGradient)" opacity="0.9"/>
+  
+  <!-- Left back petal -->
+  <path d="M30 50 C20 50, 15 60, 20 70 C25 75, 35 75, 45 70 C50 65, 55 60, 60 60 C55 55, 45 50, 30 50 Z" fill="url(#greenGradient)" opacity="0.9"/>
+  
+  <!-- Right back petal -->
+  <path d="M90 50 C100 50, 105 60, 100 70 C95 75, 85 75, 75 70 C70 65, 65 60, 60 60 C65 55, 75 50, 90 50 Z" fill="url(#greenGradient)" opacity="0.9"/>
+  
+  <!-- Teal water element (left) -->
+  <path d="M35 60 C25 60, 20 70, 25 80 C30 85, 40 85, 50 80 C55 75, 60 70, 60 60 C55 65, 45 60, 35 60 Z" fill="url(#tealGradient)"/>
+  
+  <!-- Teal water element (right) -->
+  <path d="M85 60 C95 60, 100 70, 95 80 C90 85, 80 85, 70 80 C65 75, 60 70, 60 60 C65 65, 75 60, 85 60 Z" fill="url(#tealGradient)"/>
+  
+  <!-- Front petals (lighter green) -->
+  <path d="M60 35 C55 35, 50 40, 50 48 C50 52, 52 56, 60 60 C68 56, 70 52, 70 48 C70 40, 65 35, 60 35 Z" fill="#A5D6A7" opacity="0.95"/>
+  
+  <!-- Center lotus core -->
+  <circle cx="60" cy="60" r="15" fill="url(#centerGradient)"/>
+  
+  <!-- Inner zen symbol (stylized) -->
+  <path d="M60 50 C65 50, 68 53, 68 58 C68 60, 67 62, 65 63 C63 64, 60 64, 58 62 C56 60, 56 58, 58 56 C59 55, 60 54, 60 50 Z" fill="#4ECDC4"/>
+  <path d="M60 70 C55 70, 52 67, 52 62 C52 60, 53 58, 55 57 C57 56, 60 56, 62 58 C64 60, 64 62, 62 64 C61 65, 60 66, 60 70 Z" fill="#7CB342"/>
+  
+  <!-- Subtle highlight -->
+  <circle cx="60" cy="60" r="50" fill="none" stroke="url(#centerGradient)" stroke-width="1" opacity="0.3"/>
+</svg>
