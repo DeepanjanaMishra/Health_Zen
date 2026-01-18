@@ -1,0 +1,344 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Safe Area Insets */
+    --safe-area-top: env(safe-area-inset-top, 0px);
+    --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+
+    /* Premium Light Mode Palette - Crisp & Refreshing */
+    --background: 210 40% 98%;
+    /* Very subtle cool white */
+    --foreground: 222 47% 11%;
+    /* Deep charcoal for text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Vibrant Coral/Orange Primary */
+    --primary: 14 90% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Soft Teal Secondary */
+    --secondary: 173 58% 39%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 14 90% 96%;
+    /* Very light coral tint */
+    --accent-foreground: 14 90% 60%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 14 90% 60%;
+
+    /* Charts */
+    --chart-1: 14 90% 60%;
+    /* Primary Coral */
+    --chart-2: 173 58% 39%;
+    /* Teal */
+    --chart-3: 197 37% 24%;
+    /* Navy */
+    --chart-4: 43 74% 66%;
+    /* Gold */
+    --chart-5: 27 87% 67%;
+    /* Orange */
+
+    --radius: 1rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 14 90% 96%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Premium Dark Mode - Deep & Neon */
+    --background: 222 47% 11%;
+    /* Deep Blue-Black */
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    /* Matches background for glass effect layers */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Neon  Coral */
+    --primary: 14 90% 65%;
+    --primary-foreground: 222 47% 11%;
+
+    /* Neon Teal */
+    --secondary: 173 70% 50%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 14 90% 65%;
+
+    /* Neon Charts */
+    --chart-1: 14 90% 65%;
+    /* Neon Coral */
+    --chart-2: 173 70% 50%;
+    /* Neon Teal */
+    --chart-3: 250 100% 70%;
+    /* Neon Purple */
+    --chart-4: 280 65% 60%;
+    /* Violet */
+    --chart-5: 340 75% 55%;
+    /* Pink */
+
+    --sidebar-background: 222 47% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll on mobile */
+    font-size: 14px;
+    /* Base font size for better mobile readability */
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    /* Root font size */
+  }
+
+  /* Ensure consistent sizing model and prevent overflow from padding on 100% width elements */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Media elements should never overflow their containers */
+  img,
+  video,
+  canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Improve touch targets on mobile */
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+    /* Apple's recommended minimum touch target */
+    min-width: 44px;
+  }
+
+  /* Better text rendering */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Prevent zoom on input focus on iOS */
+  @media screen and (max-width: 768px) {
+
+    input,
+    textarea,
+    select {
+      font-size: 16px !important;
+    }
+  }
+}
+
+@layer utilities {
+
+  /* Ultra Minimal Utilities - Flat, Matte, No Blur */
+  .glass-panel {
+    @apply bg-card border border-border shadow-sm;
+    /* Removed backdrop-blur and transparency */
+  }
+
+  .glass-button {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 shadow-none;
+    /* Flatter button */
+  }
+
+  /* Nullify flashy effects if classes are still present in JSX */
+  .text-glow {
+    text-shadow: none;
+  }
+
+  .button-glow {
+    box-shadow: none;
+  }
+
+  .gradient-text {
+    background: none;
+    -webkit-text-fill-color: inherit;
+    color: hsl(var(--primary));
+  }
+
+  .gradient-border-card {
+    background: none;
+    padding: 0;
+    border: none;
+    border-radius: var(--radius);
+  }
+
+  .gradient-border-card-inner {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    height: 100%;
+  }
+
+  /* Remove animations */
+  .animate-pulse,
+  .animate-bounce,
+  .animate-spin {
+    animation: none;
+  }
+}
+
+
+/* Scrollbar utilities */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.6);
+}
+
+/* Mobile status bar and PWA optimizations */
+@supports (padding: max(0px)) {
+  body {
+    /* Safe area support for iOS devices with notch */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Ensure full viewport height on mobile */
+html {
+  height: 100%;
+  height: 100vh;
+  height: 100dvh;
+  /* Dynamic viewport height for mobile */
+}
+
+body {
+  min-height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+
+  /* Reduce font sizes slightly on mobile for better space utilization */
+  h1 {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  h3 {
+    font-size: 1.125rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  /* Better card spacing on mobile */
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  /* Optimize button sizing for mobile */
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* Better form input spacing */
+  .form-input {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Tablet-specific optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Optimize for tablet layouts */
+  body {
+    font-size: 15px;
+  }
+}
